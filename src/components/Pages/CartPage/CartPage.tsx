@@ -11,7 +11,7 @@ const CartPage = () => {
   const { cartItems, removeFromCart } = useCart();
 
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
-  const freight = 8;
+  const freight = cartItems.length > 0 ? 8 : 0;
 
   return (
     <main className="container">
@@ -27,31 +27,41 @@ const CartPage = () => {
           >
             Detalhes da compra
           </Typography>
-          {cartItems.map((item) => (
-            <div key={item.id} className={Styles.cartItem}>
-              <div className={Styles.cartImageContainer}>
-                <img src={item.imageSrc} alt={item.label} />
-              </div>
-              <div className={Styles.itemDetails}>
-                <div className={Styles.itemDescription}>
-                  <Typography variantStyle="h6-small">{item.label}</Typography>
-                  <Typography variantStyle="body">
-                    {item.description}
-                  </Typography>
+          {cartItems?.length > 0 ? (
+            cartItems.map((item) => (
+              <div key={item.id} className={Styles.cartItem}>
+                <div className={Styles.cartImageContainer}>
+                  <img src={item.imageSrc} alt={item.label} />
                 </div>
-                <Typography variantStyle="body-semi-bold">
-                  R$ {item.price}
-                </Typography>
-                <Typography variantStyle="body-small-bold">
-                  Quantidade: 1
-                </Typography>
-                <Typography variantStyle="body-small-bold">
-                  Tamanho: único
-                </Typography>
-                <Button onClick={() => removeFromCart(item.id)}>Excluir</Button>
+                <div className={Styles.itemDetails}>
+                  <div className={Styles.itemDescription}>
+                    <Typography variantStyle="h6-small">
+                      {item.label}
+                    </Typography>
+                    <Typography variantStyle="body">
+                      {item.description}
+                    </Typography>
+                  </div>
+                  <Typography variantStyle="body-semi-bold">
+                    R$ {item.price}
+                  </Typography>
+                  <Typography variantStyle="body-small-bold">
+                    Quantidade: 1
+                  </Typography>
+                  <Typography variantStyle="body-small-bold">
+                    Tamanho: único
+                  </Typography>
+                  <Button onClick={() => removeFromCart(item.id)}>
+                    Excluir
+                  </Button>
+                </div>
               </div>
+            ))
+          ) : (
+            <div style={{ marginTop: "15px" }}>
+              <Typography>Não existem produtos no carrinho.</Typography>
             </div>
-          ))}
+          )}
         </div>
         <div className={Styles.cartSummary}>
           <Typography variantStyle="heading-small">Sumário</Typography>
