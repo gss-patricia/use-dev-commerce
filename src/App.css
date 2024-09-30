@@ -43,5 +43,5 @@ a:visited {
 .container {
   max-width: 1440px;
   min-height: 50vh;
-  margin: 0 auto;
+  margin: 0 128px;
 }
