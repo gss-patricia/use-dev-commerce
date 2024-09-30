@@ -1,0 +1,10 @@
+.inputContainer {
+  width: 100%;
+  position: relative;
+}
+
+.iconContainer {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
