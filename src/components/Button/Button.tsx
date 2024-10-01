@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 import classnames from "classnames"; // Para combinar classes dinamicamente
 import Styles from "./Button.module.css";
 
