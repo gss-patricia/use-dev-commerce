@@ -1,5 +1,4 @@
-// Header.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import Styles from "./Header.module.scss";
 import { LogoIcon } from "../../common/Icons/LogoIcon";
 import { CarrinhoIcon } from "../../common/Icons/CarrinhoIcon";
@@ -11,7 +10,6 @@ import { useCart } from "../../common/context/CartContext";
 import Typography from "../Typography/Typography";
 
 interface HeaderProps {
-  logo?: string;
   onSearch: (query: string) => void;
 }
 
