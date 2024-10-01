@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./RadioButton.module.css";
 
-interface RadioButtonProps {
+type RadioButtonProps = {
   label: string;
   value: string;
   checked: boolean;
   onChange: (value: string) => void;
-}
+};
 
 const RadioButton: React.FC<RadioButtonProps> = ({
   label,

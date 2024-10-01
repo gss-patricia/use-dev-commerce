@@ -6,16 +6,14 @@ import { AddCarrinhoIcon } from "../../common/Icons/AddCarrinhoIcon";
 import { useCart } from "../../common/context/CartContext";
 import Button from "../Button/Button";
 
-interface ProductDetailProps {
+type ProductDetailProps = {
   id: number;
   title: string;
   description: string;
   price: number;
   imageUrl: string;
   colors: string[];
-  onColorChange: (color: string) => void;
-  selectedColor: string;
-}
+};
 
 function ProductDetail({
   id,
@@ -24,8 +22,6 @@ function ProductDetail({
   price,
   imageUrl,
   colors,
-  onColorChange,
-  selectedColor,
 }: ProductDetailProps) {
   const [selectedValue, setSelectedValue] = useState("");
 
@@ -40,8 +36,6 @@ function ProductDetail({
       colors,
       imageSrc: imageUrl,
     };
-
-    console.log("product", product);
 
     addToCart(product);
   };
@@ -76,8 +70,8 @@ function ProductDetail({
         </div>
 
         <div className={Styles.action}>
-          <Button icon={<AddCarrinhoIcon />} onClick={handleAddToCart}>
-            Adicionar ao carrinho
+          <Button onClick={handleAddToCart}>
+            <AddCarrinhoIcon /> Adicionar ao carrinho
           </Button>
         </div>
       </div>

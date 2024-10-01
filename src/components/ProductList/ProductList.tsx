@@ -4,10 +4,10 @@ import Typography from "../Typography/Typography";
 import { Link } from "react-router-dom";
 import { Product } from "../../common/types/product";
 
-interface ProductListProps {
+type ProductListProps = {
   title: string;
   products: Product[];
-}
+};
 
 const ProductList = ({ title, products }: ProductListProps) => {
   return (

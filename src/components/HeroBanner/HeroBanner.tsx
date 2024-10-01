@@ -19,16 +19,15 @@ const HeroBanner = ({
         style={{ backgroundImage: `url(${backgroundImage})` }}
       ></div>
       <div className={styles.heroContent}>
-        {mainImage && (
-          <div className={styles.mainImageWrapper}>
-            <img
-              src={mainImage}
-              alt="Hero Image"
-              className={styles.mainImage}
-            />
-          </div>
-        )}
-        {!!children && <div className={styles.textContent}>{children}</div>}
+        <div className={styles.mainImageWrapper}>
+          <img
+            src={mainImage}
+            alt="Hora de abraças seu lado geek!"
+            className={styles.mainImage}
+          />
+        </div>
+
+        <div className={styles.textContent}>{children}</div>
       </div>
     </section>
   );

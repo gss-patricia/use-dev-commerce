@@ -1,12 +1,12 @@
 import Styles from "./Card.module.css";
 import Typography from "../Typography/Typography";
 
-interface CardProps {
+type CardProps = {
   id: number;
   label: string;
   price: number;
   imageSrc: string;
-}
+};
 
 const Card = ({ label, price, imageSrc }: CardProps) => {
   return (
