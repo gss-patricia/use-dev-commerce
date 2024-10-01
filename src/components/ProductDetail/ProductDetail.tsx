@@ -2,9 +2,9 @@ import { useState } from "react";
 import RadioButton from "../RadioButton/RadioButton";
 import Typography from "../Typography/Typography";
 import Styles from "./ProductDetail.module.css";
-import ButtonWithIcon from "../ButtonWithIcon/ButtonWithIcon";
 import { AddCarrinhoIcon } from "../../common/Icons/AddCarrinhoIcon";
 import { useCart } from "../../common/context/CartContext";
+import Button from "../Button/Button";
 
 interface ProductDetailProps {
   id: number;
@@ -76,9 +76,9 @@ function ProductDetail({
         </div>
 
         <div className={Styles.action}>
-          <ButtonWithIcon icon={<AddCarrinhoIcon />} onClick={handleAddToCart}>
+          <Button icon={<AddCarrinhoIcon />} onClick={handleAddToCart}>
             Adicionar ao carrinho
-          </ButtonWithIcon>
+          </Button>
         </div>
       </div>
     </section>

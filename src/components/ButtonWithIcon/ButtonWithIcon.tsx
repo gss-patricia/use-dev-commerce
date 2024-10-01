@@ -14,12 +14,7 @@ const ButtonWithIcon = ({
   iconPosition = "left",
   ...props
 }: ButtonWithIconProps) => {
-  return (
-    <Button {...props}>
-      {iconPosition === "left" && <span className={styles.icon}>{icon}</span>}
-      <span className={styles.text}>{children}</span>
-    </Button>
-  );
+  return <div>oi</div>;
 };
 
 export default ButtonWithIcon;

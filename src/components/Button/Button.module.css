@@ -67,3 +67,18 @@
 .large {
   border-radius: 16px;
 }
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.text {
+  flex: 1;
+  text-align: center;
+}
+
+.icon-left {
+  margin-right: 8px;
+}

@@ -54,7 +54,6 @@ export default function Newsletter({ onSubscribe }: NewsletterProps) {
           />
           <Button
             style={{ width: "145px", borderRadius: "32px", height: "56px" }}
-            type="submit"
           >
             Inscrever
           </Button>
