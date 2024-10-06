@@ -13,8 +13,6 @@ type ProductDetailProps = {
   price: number;
   imageUrl: string;
   colors: string[];
-  onColorChange: (color: string) => void;
-  selectedColor: string;
 };
 
 function ProductDetail({
@@ -24,8 +22,6 @@ function ProductDetail({
   price,
   imageUrl,
   colors,
-  onColorChange,
-  selectedColor,
 }: ProductDetailProps) {
   const [selectedValue, setSelectedValue] = useState("");
 

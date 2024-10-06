@@ -100,12 +100,15 @@ const CartPage = () => {
             </Typography>
           </div>
           <div className={Styles.cartActions}>
-            <Button onClick={handleRedirect} variant="secondary">
-              Continuar comprando
-            </Button>
-            <Button onClick={() => console.log("pagamento")}>
-              Ir para pagamento
-            </Button>
+            <Button
+              onClick={handleRedirect}
+              variant="secondary"
+              text="Continuar comprando"
+            />
+            <Button
+              onClick={() => console.log("pagamento")}
+              text="Ir para pagamento"
+            />
           </div>
         </div>
       </section>
