@@ -18,12 +18,14 @@ const Button = ({
   children,
   variant = "primary",
   size = "medium",
+  style,
   onClick,
   ...props
 }: ButtonProps) => (
   <button
     className={classnames(Styles.button, Styles[variant], Styles[size])}
     onClick={onClick}
+    style={style}
     {...props}
   >
     {children}
