@@ -12,7 +12,3 @@
   display: flex;
   gap: 10px;
 }
-
-.inputFieldContainer input {
-  min-width: 100%;
-}
