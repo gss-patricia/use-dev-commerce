@@ -50,7 +50,6 @@ export default function Newsletter({ onSubscribe }: NewsletterProps) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Digite seu melhor endereço de email"
-            hasBorder={true}
           />
           <Button
             style={{ width: "145px", borderRadius: "32px", height: "56px" }}

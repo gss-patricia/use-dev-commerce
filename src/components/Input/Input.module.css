@@ -8,6 +8,7 @@ input {
   border: 2px solid var(--azul-escuro);
   height: 64px;
   width: 100%;
+  background-color: transparent;
 
   &::placeholder {
     color: var(--azul-escuro);
@@ -30,6 +31,12 @@ input {
 }
 
 .secondary input {
-  background-color: var(--cinza-claro);
   border-color: var(--cinza-claro);
+}
+
+.iconContainer {
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  right: 40px;
 }

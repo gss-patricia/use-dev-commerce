@@ -3,7 +3,7 @@ import Styles from "./Header.module.scss";
 import { LogoIcon } from "../../common/Icons/LogoIcon";
 import { CarrinhoIcon } from "../../common/Icons/CarrinhoIcon";
 import { PerfilIcon } from "../../common/Icons/PerfilIcon";
-import InputWithIcon from "../InputWithIcon/InputWithIcon";
+import Input from "../Input/Input";
 import { SearchIcon } from "../../common/Icons/SearchIcon";
 import { Link } from "react-router-dom";
 import { useCart } from "../../common/context/CartContext";
@@ -46,7 +46,7 @@ const Header = (props: HeaderProps) => {
             </ul>
           </nav>
           <div className={Styles.searchContainer}>
-            <InputWithIcon
+            <Input
               variant="secondary"
               value={query}
               onChange={handleInputChange}

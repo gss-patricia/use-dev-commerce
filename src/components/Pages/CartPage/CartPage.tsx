@@ -3,7 +3,6 @@ import { useCart } from "../../../common/context/CartContext";
 import Button from "../../Button/Button";
 import Divider from "../../Divider/Divider";
 import Field from "../../Field/Field";
-import Input from "../../Input/Input";
 import Typography from "../../Typography/Typography";
 import Styles from "./CartPage.module.css";
 
@@ -72,6 +71,7 @@ const CartPage = () => {
               inputPlaceholder="Digite o cupom"
               buttonText="Ok"
               onButtonClick={() => {}}
+              onChange={() => {}}
             />
           </div>
           <div className={Styles.summaryResume}>

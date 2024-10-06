@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Button from "../../Button/Button";
-import HeroBanner from "../../HeroBanner/HeroBanner";
+
 import Styles from "./ProductDetailsPage.module.css";
 import Typography from "../../Typography/Typography";
 import ProductDetail from "../../ProductDetail/ProductDetail";
@@ -39,7 +38,6 @@ function ProductDetailsPage() {
 
   return (
     <>
-      <HeroBanner backgroundImage="https://raw.githubusercontent.com/gss-patricia/use-dev-assets/refs/heads/main/banner-secoes.png" />
       <main className="container">
         <section>
           <div className={Styles.productContainer}>

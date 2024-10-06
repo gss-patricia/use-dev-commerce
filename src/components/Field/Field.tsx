@@ -7,8 +7,9 @@ interface FieldProps {
   label: string;
   inputId: string;
   inputPlaceholder: string;
-  buttonText: string;
-  onButtonClick: () => void;
+  buttonText?: string;
+  onButtonClick?: () => void;
+  onChange: () => void;
 }
 
 const Field = ({
@@ -17,13 +18,18 @@ const Field = ({
   inputPlaceholder,
   buttonText,
   onButtonClick,
+  onChange,
 }: FieldProps) => {
   return (
     <div className={styles.field}>
       <label htmlFor={inputId}>{label}</label>
       <div className={styles.inputFieldContainer}>
-        <Input id={inputId} placeholder={inputPlaceholder} />
-        <Button text={buttonText} onClick={onButtonClick} />
+        <Input
+          id={inputId}
+          placeholder={inputPlaceholder}
+          onChange={() => onChange}
+        />
+        {!!buttonText && <Button text={buttonText} onClick={onButtonClick} />}
       </div>
     </div>
   );

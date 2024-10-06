@@ -41,8 +41,6 @@ function ProductDetail({
       imageSrc: imageUrl,
     };
 
-    console.log("product", product);
-
     addToCart(product);
   };
 
