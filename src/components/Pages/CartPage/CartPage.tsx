@@ -5,12 +5,19 @@ import Divider from "../../Divider/Divider";
 import Field from "../../Field/Field";
 import Typography from "../../Typography/Typography";
 import Styles from "./CartPage.module.css";
+import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const { cartItems, removeFromCart } = useCart();
 
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
   const freight = cartItems.length > 0 ? 8 : 0;
+
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/pagina-de-compras"); // Substitua com a rota desejada
+  };
 
   return (
     <main className="container">
@@ -93,8 +100,12 @@ const CartPage = () => {
             </Typography>
           </div>
           <div className={Styles.cartActions}>
-            <Button variant="secondary" text="Continuar comprando" />
-            <Button text="Ir para pagamento" />
+            <Button onClick={handleRedirect} variant="secondary">
+              Continuar comprando
+            </Button>
+            <Button onClick={() => console.log("pagamento")}>
+              Ir para pagamento
+            </Button>
           </div>
         </div>
       </section>

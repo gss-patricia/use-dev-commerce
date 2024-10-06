@@ -3,12 +3,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Product } from "../types/product";
 
-interface CartContextType {
+type CartContextType = {
   cartItems: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
   getCartCount: () => number;
-}
+};
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 

@@ -52,6 +52,7 @@ export default function Newsletter({ onSubscribe }: NewsletterProps) {
             placeholder="Digite seu melhor endereço de email"
           />
           <Button
+            onClick={(e) => console.log("inscrever")}
             style={{ width: "145px", borderRadius: "32px", height: "56px" }}
           >
             Inscrever

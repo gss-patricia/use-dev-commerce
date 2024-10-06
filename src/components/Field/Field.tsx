@@ -1,16 +1,16 @@
-import React from "react";
+import { MouseEvent } from "react";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import styles from "./Field.module.css";
 
-interface FieldProps {
+type FieldProps = {
   label: string;
   inputId: string;
   inputPlaceholder: string;
   buttonText?: string;
-  onButtonClick?: () => void;
+  onButtonClick: (e: MouseEvent<HTMLElement>) => void;
   onChange: () => void;
-}
+};
 
 const Field = ({
   label,
@@ -29,7 +29,7 @@ const Field = ({
           placeholder={inputPlaceholder}
           onChange={() => onChange}
         />
-        {!!buttonText && <Button text={buttonText} onClick={onButtonClick} />}
+        {!!buttonText && <Button onClick={onButtonClick}>{buttonText}</Button>}
       </div>
     </div>
   );

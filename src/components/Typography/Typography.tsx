@@ -17,13 +17,13 @@ type VariantStyle =
   | "heading-semi-bold"
   | "h6-small";
 
-interface TypographyProps {
+type TypographyProps = {
   variant?: Variant;
   variantStyle?: VariantStyle;
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
-}
+};
 
 const Typography = ({
   variant = "p",

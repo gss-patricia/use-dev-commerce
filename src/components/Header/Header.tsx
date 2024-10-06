@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../common/context/CartContext";
 import Typography from "../Typography/Typography";
 
-interface HeaderProps {
+type HeaderProps = {
   onSearch: (query: string) => void;
-}
+};
 
 const Header = (props: HeaderProps) => {
   const [query, setQuery] = useState<string>("");

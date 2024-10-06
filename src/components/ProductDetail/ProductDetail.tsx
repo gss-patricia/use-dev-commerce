@@ -6,7 +6,7 @@ import { AddCarrinhoIcon } from "../../common/Icons/AddCarrinhoIcon";
 import { useCart } from "../../common/context/CartContext";
 import Button from "../Button/Button";
 
-interface ProductDetailProps {
+type ProductDetailProps = {
   id: number;
   title: string;
   description: string;
@@ -15,7 +15,7 @@ interface ProductDetailProps {
   colors: string[];
   onColorChange: (color: string) => void;
   selectedColor: string;
-}
+};
 
 function ProductDetail({
   id,
