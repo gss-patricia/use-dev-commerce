@@ -24,11 +24,13 @@ const Field = ({
     <div className={styles.field}>
       <label htmlFor={inputId}>{label}</label>
       <div className={styles.inputFieldContainer}>
-        <Input
-          id={inputId}
-          placeholder={inputPlaceholder}
-          onChange={() => onChange}
-        />
+        <div style={{ width: "90%" }}>
+          <Input
+            id={inputId}
+            placeholder={inputPlaceholder}
+            onChange={() => onChange}
+          />
+        </div>
         {!!buttonText && <Button onClick={onButtonClick}>{buttonText}</Button>}
       </div>
     </div>
