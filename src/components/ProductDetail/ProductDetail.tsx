@@ -4,7 +4,7 @@ import Typography from "../Typography/Typography";
 import Styles from "./ProductDetail.module.css";
 import { AddCarrinhoIcon } from "../../common/Icons/AddCarrinhoIcon";
 import { useCart } from "../../common/context/CartContext";
-import Button from "../Button/Button";
+import IconButton from "../IconButton/IconButton";
 
 type ProductDetailProps = {
   id: number;
@@ -70,9 +70,10 @@ function ProductDetail({
         </div>
 
         <div className={Styles.action}>
-          <Button onClick={handleAddToCart}>
-            <AddCarrinhoIcon /> Adicionar ao carrinho
-          </Button>
+          <IconButton onClick={handleAddToCart}>
+            <AddCarrinhoIcon />
+            Adicionar ao carrinho
+          </IconButton>
         </div>
       </div>
     </section>

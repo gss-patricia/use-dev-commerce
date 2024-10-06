@@ -4,7 +4,7 @@ import Input, { InputProps } from "../Input/Input";
 import Styles from "./IconInput.module.css";
 
 type IconInputProps = {
-  children: ReactNode;
+  children?: ReactNode;
 } & InputProps;
 
 const IconInput = ({
@@ -14,9 +14,11 @@ const IconInput = ({
 }: IconInputProps) => (
   <div className={Styles.iconInputContainer}>
     <Input variant={variant} {...props} />
-    <Button className={Styles.iconButton} variant="secondary">
-      {children}
-    </Button>
+    {children && (
+      <Button className={Styles.iconButton} variant="secondary">
+        {children}
+      </Button>
+    )}
   </div>
 );
 
