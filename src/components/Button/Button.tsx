@@ -1,4 +1,4 @@
-import { ReactNode, MouseEvent } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import classnames from "classnames"; // Para combinar classes dinamicamente
 import Styles from "./Button.module.css";
 
@@ -8,24 +8,18 @@ type StyleProps = {
 
 type ButtonProps = {
   children?: ReactNode;
-  onClick: (e: MouseEvent<HTMLElement>) => void;
-  style?: StyleProps;
   variant?: "primary" | "secondary";
   size?: "small" | "medium" | "large"; // Define diferentes tamanhos
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({
   children,
   variant = "primary",
   size = "medium",
-  style,
-  onClick,
   ...props
 }: ButtonProps) => (
   <button
     className={classnames(Styles.button, Styles[variant], Styles[size])}
-    onClick={onClick}
-    style={style}
     {...props}
   >
     {children}
