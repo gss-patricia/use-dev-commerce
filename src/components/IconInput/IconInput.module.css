@@ -1,0 +1,9 @@
+.iconInputContainer {
+  display: flex;
+  width: 100%;
+}
+
+.iconButton {
+  position: relative;
+  right: 36px;
+}
