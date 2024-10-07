@@ -8,6 +8,7 @@ import { useCart } from "../../common/context/CartContext";
 import Typography from "../Typography/Typography";
 import IconInput from "../IconInput/IconInput";
 import { SearchIcon } from "../../common/Icons";
+import Button from "../Button/Button";
 
 type HeaderProps = {
   onSearch: (query: string) => void;
@@ -52,7 +53,9 @@ const Header = (props: HeaderProps) => {
               onChange={handleInputChange}
               placeholder="O que você procura?"
             >
-              <SearchIcon />
+              <Button variant="secondary">
+                <SearchIcon />
+              </Button>
             </IconInput>
           </div>
           <div className={Styles.userActions}>

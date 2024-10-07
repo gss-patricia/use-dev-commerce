@@ -14,9 +14,7 @@ const IconInput = ({
 }: IconInputProps) => (
   <div className={Styles.iconInputContainer}>
     <Input variant={variant} {...props} />
-    <Button className={Styles.iconButton} variant="secondary">
-      {children}
-    </Button>
+    <div className={Styles.iconContainer}> {children}</div>
   </div>
 );
 

@@ -3,7 +3,10 @@
   width: 100%;
 }
 
-.iconButton {
+.iconContainer {
   position: relative;
   right: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
