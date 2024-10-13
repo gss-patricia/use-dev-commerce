@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import Styles from "./Input.module.css";
 
 type InputProps = {
@@ -8,7 +8,7 @@ type InputProps = {
   value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   id?: string;
-  style?: any;
+  style?: CSSProperties;
   type?: string;
 };
 
