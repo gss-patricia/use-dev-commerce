@@ -1,6 +1,6 @@
 import Styles from "./ProductList.module.css";
-import Card from "../Card/Card";
-import Typography from "../Typography/Typography";
+import Card from "../Card";
+import Typography from "../Typography";
 import { Link } from "react-router-dom";
 import { Product } from "../../common/types/product";
 

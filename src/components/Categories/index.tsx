@@ -1,5 +1,5 @@
 import { Category } from "../../common/types/category";
-import Typography from "../Typography/Typography";
+import Typography from "../Typography";
 import Styles from "./Categories.module.css";
 
 type CategoriesProps = {

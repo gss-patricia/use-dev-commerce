@@ -1,5 +1,5 @@
 import Styles from "./Card.module.css";
-import Typography from "../Typography/Typography";
+import Typography from "../Typography";
 
 type CardProps = {
   id: number;
@@ -8,7 +8,7 @@ type CardProps = {
   imageSrc: string;
 };
 
-const Card = ({ label, price, imageSrc }: CardProps) => {
+const Card = ({ label, price, imageSrc, id }: CardProps) => {
   return (
     <div className={Styles.card}>
       <div className={Styles.imageContainer}>

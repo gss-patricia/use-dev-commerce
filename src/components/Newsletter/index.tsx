@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Newsletter.module.css";
 import { validateEmail } from "../../common/utils/emailValidation";
-import Button from "../Button/Button";
-import Input from "../Input/Input";
-import Typography from "../Typography/Typography";
+import Button from "../Button";
+import Input from "../Input";
+import Typography from "../Typography";
 
 type NewsletterProps = {
   onSubscribe: (email: string) => void;

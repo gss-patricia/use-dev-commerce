@@ -1,9 +1,9 @@
 import React, { ReactNode } from "react";
 import styles from "./Footer.module.css";
 import FooterSection from "./FooterSection";
-import Divider from "../Divider/Divider";
+import Divider from "../Divider";
 import { LogoVerdeIcon } from "../../common/Icons";
-import Typography from "../Typography/Typography";
+import Typography from "../Typography";
 
 export type Section = {
   title: string;

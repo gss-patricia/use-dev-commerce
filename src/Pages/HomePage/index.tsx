@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "../../components/Button/Button";
-import Categories from "../../components/Categories/Categories";
-import HeroBanner from "../../components/HeroBanner/HeroBanner";
-import Newsletter from "../../components/Newsletter/Newsletter";
-import ProductList from "../../components/ProductList/ProductList";
-import Typography from "../../components/Typography/Typography";
+import Button from "../../components/Button";
+import Categories from "../../components/Categories";
+import HeroBanner from "../../components/HeroBanner";
+import Newsletter from "../../components/Newsletter";
+import ProductList from "../../components/ProductList";
+import Typography from "../../components/Typography";
 import { Category } from "../../common/types/category";
 import {
   CATEGORIES_BASE_URL,

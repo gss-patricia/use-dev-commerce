@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import Styles from "./ProductDetailsPage.module.css";
-import Typography from "../../components/Typography/Typography";
+import Typography from "../../components/Typography";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
 import { PRODUCTS_BASE_URL } from "../../common/constants/endpoints";
 import { Product } from "../../common/types/product";

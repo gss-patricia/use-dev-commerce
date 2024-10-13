@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./FooterSection.module.css";
-import Typography from "../Typography/Typography";
+import Typography from "../Typography";
 
 type FooterSectionProps = {
   title: string;

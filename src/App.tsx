@@ -1,12 +1,12 @@
 import "./App.css";
-import Header from "./components/Header/Header";
+import Header from "./components/Header/Index";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import FooterConfig from "./components/Footer/FooterConfig";
-import HomePage from "./pages/HomePage/HomePage";
-import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
+import HomePage from "./pages/HomePage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ScrollToTop from "./common/utils/ScrollToTop";
 import { CartProvider } from "./common/context/CartContext";
-import CartPage from "./pages/CartPage/CartPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (

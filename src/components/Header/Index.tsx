@@ -3,11 +3,11 @@ import Styles from "./Header.module.scss";
 import { LogoIcon } from "../../common/Icons/LogoIcon";
 import { CarrinhoIcon } from "../../common/Icons/CarrinhoIcon";
 import { PerfilIcon } from "../../common/Icons/PerfilIcon";
-import Input from "../Input/Input";
+import Input from "../Input";
 import { SearchIcon } from "../../common/Icons/SearchIcon";
 import { Link } from "react-router-dom";
 import { useCart } from "../../common/context/CartContext";
-import Typography from "../Typography/Typography";
+import Typography from "../Typography";
 
 type HeaderProps = {
   onSearch: (query: string) => void;
