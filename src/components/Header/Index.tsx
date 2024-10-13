@@ -8,6 +8,7 @@ import { SearchIcon } from "../../common/icons/SearchIcon";
 import { Link } from "react-router-dom";
 import { useCart } from "../../common/context/CartContext";
 import Typography from "../Typography";
+import Button from "../Button";
 
 type HeaderProps = {
   onSearch: (query: string) => void;
@@ -51,11 +52,14 @@ const Header = (props: HeaderProps) => {
               value={query}
               onChange={handleInputChange}
               placeholder="O que você procura?"
-              icon={<SearchIcon />}
             />
-            <button onClick={handleSearch}>
-              <i className="fa fa-search"></i>
-            </button>
+            <Button
+              style={{ position: "relative", right: "36px" }}
+              variant="secondary"
+              onClick={() => {}}
+            >
+              <SearchIcon />
+            </Button>
           </div>
           <div className={Styles.userActions}>
             <a href="#">Login</a>
