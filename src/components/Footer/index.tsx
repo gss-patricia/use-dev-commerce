@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import styles from "./Footer.module.css";
 import FooterSection from "./FooterSection";
 import Divider from "../Divider";
-import { LogoVerdeIcon } from "../../common/Icons";
+import { LogoVerdeIcon } from "../../common/icons";
 import Typography from "../Typography";
 
 export type Section = {

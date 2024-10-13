@@ -1,4 +1,4 @@
-import { ShoppingBagIcon } from "../../common/Icons/ShoppingBagIcon";
+import { ShoppingBagIcon } from "../../common/icons/ShoppingBagIcon";
 import { useCart } from "../../common/context/CartContext";
 import Button from "../../components/Button";
 import Divider from "../../components/Divider";

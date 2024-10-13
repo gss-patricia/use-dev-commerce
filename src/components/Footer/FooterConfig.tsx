@@ -8,7 +8,7 @@ import {
   DinnersIcon,
   WhatsAppIcon,
   TiktokIcon,
-} from "../../common/Icons";
+} from "../../common/icons";
 
 export default function FooterConfig() {
   const sections = [

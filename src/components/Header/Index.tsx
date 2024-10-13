@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Styles from "./Header.module.scss";
-import { LogoIcon } from "../../common/Icons/LogoIcon";
-import { CarrinhoIcon } from "../../common/Icons/CarrinhoIcon";
-import { PerfilIcon } from "../../common/Icons/PerfilIcon";
+import { LogoIcon } from "../../common/icons/LogoIcon";
+import { CarrinhoIcon } from "../../common/icons/CarrinhoIcon";
+import { PerfilIcon } from "../../common/icons/PerfilIcon";
 import Input from "../Input";
-import { SearchIcon } from "../../common/Icons/SearchIcon";
+import { SearchIcon } from "../../common/icons/SearchIcon";
 import { Link } from "react-router-dom";
 import { useCart } from "../../common/context/CartContext";
 import Typography from "../Typography";

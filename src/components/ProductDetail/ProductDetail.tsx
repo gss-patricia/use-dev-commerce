@@ -2,7 +2,7 @@ import { useState } from "react";
 import RadioButton from "../RadioButton";
 import Typography from "../Typography";
 import Styles from "./ProductDetail.module.css";
-import { AddCarrinhoIcon } from "../../common/Icons/AddCarrinhoIcon";
+import { AddCarrinhoIcon } from "../../common/icons/AddCarrinhoIcon";
 import { useCart } from "../../common/context/CartContext";
 import Button from "../Button";
 
