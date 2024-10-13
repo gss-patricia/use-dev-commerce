@@ -16,7 +16,7 @@ const CartPage = () => {
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate("/pagina-de-compras"); // Substitua com a rota desejada
+    navigate("/");
   };
 
   return (
