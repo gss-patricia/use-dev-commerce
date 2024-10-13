@@ -9,6 +9,7 @@ import { useCart } from "../../common/context/CartContext";
 import Typography from "../Typography";
 import Button from "../Button";
 import IconInput from "../IconInput";
+import IconButton from "../IconButton";
 
 type HeaderProps = {
   onSearch: (query: string) => void;
@@ -53,9 +54,9 @@ const Header = (props: HeaderProps) => {
               onChange={handleInputChange}
               placeholder="O que você procura?"
             >
-              <Button variant="secondary" onClick={handleSearch}>
+              <IconButton variant="secondary" onClick={handleSearch}>
                 <SearchIcon />
-              </Button>
+              </IconButton>
             </IconInput>
           </div>
           <div className={Styles.userActions}>
