@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Newsletter.module.css";
 import { validateEmail } from "../../common/utils/emailValidation";
-import { subscribeToNewsletter } from "../../common/service/newsLetterService";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Typography from "../Typography/Typography";
@@ -21,14 +20,6 @@ export default function Newsletter({ onSubscribe }: NewsletterProps) {
     if (!validateEmail(email)) {
       setError("Por favor, insira um endereço de e-mail válido.");
       return;
-    }
-
-    try {
-      await subscribeToNewsletter(email);
-      onSubscribe(email);
-      setEmail("");
-    } catch (err) {
-      setError("Ocorreu um erro ao se inscrever. Por favor, tente novamente.");
     }
   };
 
@@ -58,7 +49,11 @@ export default function Newsletter({ onSubscribe }: NewsletterProps) {
             Inscrever
           </Button>
         </form>
-        {error && <p className={styles.error}>{error}</p>}
+        {error && (
+          <div style={{ display: "flex" }}>
+            <p className={styles.error}>{error}</p>
+          </div>
+        )}
       </div>
     </section>
   );

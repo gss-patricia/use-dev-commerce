@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "../../Button/Button";
-import Categories from "../../Categories/Categories";
-import HeroBanner from "../../HeroBanner/HeroBanner";
-import Newsletter from "../../Newsletter/Newsletter";
-import ProductList from "../../ProductList/ProductList";
-import Typography from "../../Typography/Typography";
-import { Category } from "../../../common/types/category";
+import Button from "../../components/Button/Button";
+import Categories from "../../components/Categories/Categories";
+import HeroBanner from "../../components/HeroBanner/HeroBanner";
+import Newsletter from "../../components/Newsletter/Newsletter";
+import ProductList from "../../components/ProductList/ProductList";
+import Typography from "../../components/Typography/Typography";
+import { Category } from "../../common/types/category";
 import {
   CATEGORIES_BASE_URL,
   PRODUCTS_BASE_URL,
-} from "../../../common/constants/endpoints";
-import { Product } from "../../../common/types/product";
+} from "../../common/constants/endpoints";
+import { Product } from "../../common/types/product";
 
 function HomePage() {
   const [categories, setCategories] = useState<Category[]>([]);

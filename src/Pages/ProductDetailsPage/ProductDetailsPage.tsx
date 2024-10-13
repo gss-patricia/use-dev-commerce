@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import Styles from "./ProductDetailsPage.module.css";
-import Typography from "../../Typography/Typography";
-import ProductDetail from "../../ProductDetail/ProductDetail";
-import { PRODUCTS_BASE_URL } from "../../../common/constants/endpoints";
-import { Product } from "../../../common/types/product";
+import Typography from "../../components/Typography/Typography";
+import ProductDetail from "../../components/ProductDetail/ProductDetail";
+import { PRODUCTS_BASE_URL } from "../../common/constants/endpoints";
+import { Product } from "../../common/types/product";
 
 function ProductDetailsPage() {
   const { id } = useParams<{ id: string }>(); // Pega o ID da URL

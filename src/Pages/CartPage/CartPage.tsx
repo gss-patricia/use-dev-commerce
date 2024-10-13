@@ -1,9 +1,9 @@
-import { ShoppingBagIcon } from "../../../common/Icons/ShoppingBagIcon";
-import { useCart } from "../../../common/context/CartContext";
-import Button from "../../Button/Button";
-import Divider from "../../Divider/Divider";
-import Field from "../../Field/Field";
-import Typography from "../../Typography/Typography";
+import { ShoppingBagIcon } from "../../common/Icons/ShoppingBagIcon";
+import { useCart } from "../../common/context/CartContext";
+import Button from "../../components/Button/Button";
+import Divider from "../../components/Divider/Divider";
+import Field from "../../components/Field/Field";
+import Typography from "../../components/Typography/Typography";
 import Styles from "./CartPage.module.css";
 import { useNavigate } from "react-router-dom";
 
