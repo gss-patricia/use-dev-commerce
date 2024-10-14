@@ -6,13 +6,13 @@ import Typography from "../Typography";
 import Styles from "./CartSummary.module.css";
 
 type CarSummaryProps = {
-  cartItems: Product[];
+  quantity: number;
   total: number;
   freight: number;
 } & CartActionsProps;
 
 const CartSummary = ({
-  cartItems,
+  quantity,
   total,
   freight,
   handleRedirect,
@@ -32,7 +32,7 @@ const CartSummary = ({
     </div>
     <div className={Styles.summaryResume}>
       <Typography variantStyle="body-small-bold">
-        {cartItems.length} Produtos
+        {quantity} Produtos
       </Typography>
       <Typography variantStyle="body-small-bold">R$ {total}</Typography>
       <Typography variantStyle="body-small-bold">Frete:</Typography>

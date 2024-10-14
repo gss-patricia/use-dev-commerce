@@ -24,7 +24,7 @@ const CartPage = () => {
       <section className={Styles.cartPage}>
         <CartList cartItems={cartItems} onRemove={removeFromCart} />
         <CartSummary
-          cartItems={cartItems}
+          quantity={cartItems?.length}
           total={total}
           freight={freight}
           onPayment={handlePayment}
