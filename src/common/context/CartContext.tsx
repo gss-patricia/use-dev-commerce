@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Product } from "../types/product";
+import { StorageService, createLocalStorageService } from "../hooks/useStorage";
 
 type CartContextType = {
   cartItems: Product[];
@@ -12,18 +13,23 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider = ({ children }: { children: React.ReactNode }) => {
+export const CartProvider = ({
+  children,
+  storageService = createLocalStorageService(),
+}: {
+  children: React.ReactNode;
+  storageService?: StorageService;
+}) => {
   const [cartItems, setCartItems] = useState<Product[]>(() => {
-    const storedItems = localStorage.getItem("cartItems");
+    const storedItems = storageService.getItem("cartItems");
     return storedItems ? JSON.parse(storedItems) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
+    storageService.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems, storageService]);
 
   const addToCart = (product: Product) => {
-    // Verificando se o produto já está no carrinho
     const existingProduct = cartItems.find((item) => item.id === product.id);
     if (!existingProduct) {
       setCartItems((prevItems) => [...prevItems, product]);
