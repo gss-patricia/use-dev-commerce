@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Button from "../../components/Button";
 import Categories from "../../components/Categories";
 import HeroBanner from "../../components/HeroBanner";
@@ -7,6 +5,7 @@ import Newsletter from "../../components/Newsletter";
 import ProductList from "../../components/ProductList";
 import Typography from "../../components/Typography";
 import { Category } from "../../common/types/category";
+import useFetch from "../../common/hooks/useFetch";
 import {
   CATEGORIES_BASE_URL,
   PRODUCTS_BASE_URL,
@@ -14,44 +13,23 @@ import {
 import { Product } from "../../common/types/product";
 
 function HomePage() {
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoadingCategories, setIsLoadingCategories] = useState(true);
-  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
-  const [categoriesError, setCategoriesError] = useState<string | null>(null);
-  const [productsError, setProductsError] = useState<string | null>(null);
-
   const handleSubscribe = (email: string) => {
     console.log(`Usuário inscrito com o email: ${email}`);
   };
 
   // Fetch de categorias
-  useEffect(() => {
-    axios
-      .get(CATEGORIES_BASE_URL)
-      .then((response) => {
-        setCategories(response.data.categories);
-        setIsLoadingCategories(false);
-      })
-      .catch((err) => {
-        setCategoriesError("Erro ao carregar categorias.");
-        setIsLoadingCategories(false);
-      });
-  }, []);
+  const {
+    data: categoriesData,
+    isLoading: isLoadingCategories,
+    error: categoriesError,
+  } = useFetch<{ categories: Category[] }>(CATEGORIES_BASE_URL);
 
   // Fetch de produtos
-  useEffect(() => {
-    axios
-      .get(PRODUCTS_BASE_URL)
-      .then((response) => {
-        setProducts(response.data.products);
-        setIsLoadingProducts(false);
-      })
-      .catch((err) => {
-        setProductsError("Erro ao carregar produtos.");
-        setIsLoadingProducts(false);
-      });
-  }, []);
+  const {
+    data: productData,
+    isLoading: isLoadingProducts,
+    error: productsError,
+  } = useFetch<{ products: Product[] }>(PRODUCTS_BASE_URL);
 
   return (
     <>
@@ -72,17 +50,20 @@ function HomePage() {
           <p>Carregando categorias...</p>
         ) : categoriesError ? (
           <p>{categoriesError}</p>
-        ) : (
-          <Categories categories={categories} />
-        )}
+        ) : categoriesData ? (
+          <Categories categories={categoriesData.categories} />
+        ) : null}
 
         {isLoadingProducts ? (
           <p>Carregando produtos...</p>
         ) : productsError ? (
           <p>{productsError}</p>
-        ) : (
-          <ProductList title="Promoções especiais" products={products} />
-        )}
+        ) : productData ? (
+          <ProductList
+            title="Promoções especiais"
+            products={productData.products}
+          />
+        ) : null}
       </main>
       <Newsletter onSubscribe={handleSubscribe} />
     </>
