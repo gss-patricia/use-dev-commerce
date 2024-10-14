@@ -11,6 +11,7 @@ import {
   PRODUCTS_BASE_URL,
 } from "../../common/constants/endpoints";
 import { Product } from "../../common/types/product";
+import { useFetchProducts } from "../../common/hooks/useProductService";
 
 function HomePage() {
   const handleSubscribe = (email: string) => {
@@ -26,10 +27,10 @@ function HomePage() {
 
   // Fetch de produtos
   const {
-    data: productData,
+    data: productsData,
     isLoading: isLoadingProducts,
     error: productsError,
-  } = useFetch<{ products: Product[] }>(PRODUCTS_BASE_URL);
+  } = useFetchProducts();
 
   return (
     <>
@@ -58,10 +59,10 @@ function HomePage() {
           <p>Carregando produtos...</p>
         ) : productsError ? (
           <p>{productsError}</p>
-        ) : productData ? (
+        ) : productsData ? (
           <ProductList
             title="Promoções especiais"
-            products={productData.products}
+            products={productsData.products}
           />
         ) : null}
       </main>
