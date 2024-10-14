@@ -1,6 +1,7 @@
 import useFetch from "../../hooks/useFetch";
 import { Product } from "../../types/product";
 import { PRODUCTS_BASE_URL } from "../../constants/endpoints";
+import { findProductById } from "../../utils/productMapping";
 
 type FetchProductDetailResult = {
   productDetail: Product | undefined;
@@ -13,17 +14,16 @@ export const useFetchProducts = () => {
   return useFetch<{ products: Product[] }>(PRODUCTS_BASE_URL);
 };
 
-// Hook customizado para buscar os detalhes de um produto
-export const useFetchProductDetail = (id: string): FetchProductDetailResult => {
+export const useFetchProductDetail = (id: string) => {
   const {
     data: productData,
     isLoading,
     error,
   } = useFetch<{ products: Product[] }>(PRODUCTS_BASE_URL);
 
-  const productDetail = productData?.products.find(
-    (product) => product.id.toString() === id
-  );
+  const productDetail = productData
+    ? findProductById(productData.products, id)
+    : undefined;
 
   return { productDetail, isLoading, error };
 };
