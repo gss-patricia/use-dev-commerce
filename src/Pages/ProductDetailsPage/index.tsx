@@ -1,25 +1,18 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../common/hooks/useFetch";
 import Styles from "./ProductDetailsPage.module.css";
 import Typography from "../../components/Typography";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
-import { PRODUCTS_BASE_URL } from "../../common/constants/endpoints";
-import { Product } from "../../common/types/product";
 import SimpleBanner from "../../components/SimpleBanner";
+import { useFetchProductDetail } from "../../common/hooks/useProductService";
 
 function ProductDetailsPage() {
   const { id } = useParams<{ id: string }>(); // Pega o ID da URL
 
-  const {
-    data: productData,
-    isLoading,
-    error,
-  } = useFetch<{ products: Product[] }>(PRODUCTS_BASE_URL);
+  const { productDetail, isLoading, error } = useFetchProductDetail(id || "");
 
-  // Encontrar o produto com base no ID
-  const product = productData?.products.find(
-    (product) => product.id.toString() === id
-  );
+  if (!id) {
+    return <p>Produto não encontrado</p>;
+  }
 
   return (
     <>
@@ -33,14 +26,14 @@ function ProductDetailsPage() {
               <p>Carregando...</p>
             ) : error ? (
               <p>{error}</p>
-            ) : product ? (
+            ) : productDetail ? (
               <ProductDetail
-                id={product.id}
-                title={product.label}
-                description={product.description}
-                price={product.price}
-                imageUrl={product.imageSrc}
-                colors={product.colors}
+                id={productDetail.id}
+                title={productDetail.label}
+                description={productDetail.description}
+                price={productDetail.price}
+                imageUrl={productDetail.imageSrc}
+                colors={productDetail.colors}
               />
             ) : (
               <p>Produto não encontrado.</p>
